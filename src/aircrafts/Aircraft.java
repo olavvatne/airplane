@@ -3,22 +3,27 @@ package aircrafts;
 import player.Player;
 import routes.Route;
 
+/*Author: torgeha
+ * 
+ * Abstract class, all aircraft inherits from this.
+ * Has the basic functionality of a general aircraft
+ * 
+ * */
 public abstract class Aircraft {
-	
-	
+
 	private final String manufacturer;
 	private final String modelFamily;
 	private final String model;
-	
+
 	private int cost;
 	private final int maxSpeed;
 	private final int cruiseSpeed;
 	private final int flightRange;
 	private final int fuelConsumption;
 	private final int lifeSpan;
-	
-	private Route route; //allowed to be null
-	
+
+	private Route route; // allowed to be null
+
 	public Aircraft(String manufacturer, String modelFamily, String model, int cost, int maxSpeed, int cruiseSpeed, int flightRange, int fuelConsumption, int lifeSpan, Route route) {
 		this.manufacturer = manufacturer;
 		this.modelFamily = modelFamily;
@@ -31,7 +36,7 @@ public abstract class Aircraft {
 		this.lifeSpan = lifeSpan;
 		this.route = route;
 	}
-	
+
 	public int getCost() {
 		return cost;
 	}
@@ -75,26 +80,22 @@ public abstract class Aircraft {
 	public Route getRoute() {
 		return route;
 	}
-	
+
 	public void assignToRoute(Route route) {
 		this.route = route;
 		this.route.setAircraft(this);
 	}
 
-	public String  toString() {
+	public String toString() {
 		String temp = manufacturer + " - " + modelFamily + " - " + model;
-		
-		if(this.route != null) {
+
+		if (this.route != null) {
 			temp += "; Route: " + route;
-		}
-		else {
+		} else {
 			temp += "; Not assigned to any route";
 		}
-		
+
 		return temp;
 	}
-	
-	
-	
-	
+
 }
