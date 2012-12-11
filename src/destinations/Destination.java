@@ -9,15 +9,28 @@ package destinations;
 public class Destination {
 
 	private final String name;
+	private final double longitude;
+	private final double latitude;
 	private int inhabitants;
 	private int tourismRating;
 	private int businessRating;
+	
 
-	public Destination(String name, int tourismRating, int businessRating, int inhabitants) {
+	public Destination(String name, int tourismRating, int businessRating, int inhabitants, double longitude, double latitude) {
 		this.name = name;
 		this.tourismRating = tourismRating;
 		this.businessRating = businessRating;
 		this.inhabitants = inhabitants;
+		this.longitude = longitude;
+		this.latitude = latitude;
+	}
+	
+	public double getLatitude() {
+		return latitude;
+	}
+	
+	public double getLongitude() {
+		return longitude;
 	}
 
 	public String getName() {
