@@ -1,6 +1,5 @@
 package aircrafts;
 
-import player.Player;
 import routes.Route;
 
 /*Author: torgeha
@@ -83,7 +82,9 @@ public abstract class Aircraft {
 
 	public void assignToRoute(Route route) {
 		this.route = route;
-		this.route.setAircraft(this);
+		
+		if (this.route.getAircraft() == null) 
+			this.route.setAircraft(this);
 	}
 
 	public String toString() {

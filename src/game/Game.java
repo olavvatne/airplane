@@ -58,7 +58,10 @@ public class Game {
 
 		p1.buyAircraft(new PassengerPlane("Boeing", "B737", "600", 58000, 800, 900, 2500, 20, 25, null, 23, 237));
 		System.out.println(p1);
+		
 
 	}
+	
+	
 
 }

@@ -21,12 +21,13 @@ public class Route {
 		this.start = start;
 		this.end = end;
 		this.range = range;
-		assignAircraft(aircraft);
+		setAircraft(aircraft);
 	}
 
-	private void assignAircraft(Aircraft aircraft) {
+	public void setAircraft(Aircraft aircraft) {
 		this.aircraft = aircraft;
-		this.aircraft.assignToRoute(this);
+		if (this.aircraft.getRoute() == null)
+			this.aircraft.assignToRoute(this);
 	}
 
 	public Destination getStartDestination() {
@@ -41,8 +42,8 @@ public class Route {
 		return this.aircraft;
 	}
 
-	public void setAircraft(Aircraft aircraft) {
-		this.aircraft = aircraft;
+	public int getRange() {
+		return range;
 	}
 
 	public String toString() {

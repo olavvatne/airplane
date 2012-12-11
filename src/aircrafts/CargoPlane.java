@@ -16,4 +16,8 @@ public class CargoPlane extends AirPlane {
 
 	}
 
+	public int getMaxCargoLoad() {
+		return maxCargoLoad;
+	}
+
 }
